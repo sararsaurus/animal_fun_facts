@@ -20,7 +20,7 @@ function App() {
         className="animal"
         alt={animal}
         src={Animals[animal].image}
-        ariaLabel={animal}
+        aria-label={animal}
         role="button"
         onClick={displayFact}
       />
@@ -29,7 +29,8 @@ function App() {
 
   const animalFacts = (
     <div>
-      <h1 className="title">{title === "" ? "Click an animal for a fun fact" : title}</h1>
+      {/* <h1 className="title">{title === "" ? "Click an animal for a fun fact" : title}</h1> */}
+      <h1 className="title">{title || "Click on an animal!"}</h1>
       <div className="background">
         <p className="text" id="fact"></p>
         <div className="animals">{images}</div>
