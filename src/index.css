@@ -17,7 +17,9 @@
 
 }
 
-/* .animal {
- 
-
-} */
+.text {
+font-weight: bold;
+color: aliceblue;
+background-color:indianred;
+text-align: center;
+}
