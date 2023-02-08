@@ -11,10 +11,18 @@ function App() {
     );
   }
 
+  const displayFact = (e) => {
+    const selectedAnimal = e.target.alt;
+    const animalInfo = Animals[selectedAnimal];
+    const optionIndex = Math.floor(Math.random() * animalInfo.facts.length);
+    const funFact = animalInfo.facts[optionIndex];
+  };
+
   const animalFacts = (
     <div>
       <h1 className="title">{title === "" ? "Click an animal for a fun fact" : title}</h1>
       <div className="background">
+        <p id="fact"></p>
         <div className="animals">{images}</div>
       </div>
     </div>
