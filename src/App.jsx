@@ -2,7 +2,7 @@ import React from "react";
 import { Animals } from "./Animals";
 
 function App() {
-  const displayFact = (e) => {
+  const displayFactAndColor = (e) => {
     const selectedAnimal = e.target.alt;
     const animalInfo = Animals[selectedAnimal];
     const optionIndex = Math.floor(Math.random() * animalInfo.facts.length);
@@ -31,7 +31,7 @@ function App() {
         src={Animals[animal].image}
         aria-label={animal}
         role="button"
-        onClick={displayFact}
+        onClick={displayFactAndColor}
       />
     );
   }
