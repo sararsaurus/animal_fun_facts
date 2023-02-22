@@ -10,22 +10,15 @@ function App() {
     document.getElementById("fact").innerHTML = funFact;
   };
 
-  const changeOverallBackgroundColor = (e) => {
+  const changeBackgroundColor = (e) => {
     const selectedAnimal = e.target.alt;
 
     if (selectedAnimal == "dolphin") {
       document.body.style.backgroundColor = "purple";
-    } else {
-      document.body.style.backgroundColor = "initial";
-    }
-  };
-
-  const changeImage = (e) => {
-    const selectedAnimal = e.target.alt;
-
-    if (selectedAnimal == "lobster") {
+    } else if (selectedAnimal == "lobster") {
       document.getElementById("party").style.backgroundColor = "orange";
     } else {
+      document.body.style.backgroundColor = "initial";
       document.getElementById("party").style.backgroundColor = "initial";
     }
   };
@@ -43,8 +36,7 @@ function App() {
         aria-label={animal}
         role="button"
         // onClick={displayFact}
-        // onClick={changeOverallBackgroundColor}
-        onClick={changeImage}
+        onClick={changeBackgroundColor}
       />
     );
   }
