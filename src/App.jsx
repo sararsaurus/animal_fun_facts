@@ -8,10 +8,6 @@ function App() {
     const optionIndex = Math.floor(Math.random() * animalInfo.facts.length);
     const funFact = animalInfo.facts[optionIndex];
     document.getElementById("fact").innerHTML = funFact;
-  };
-
-  const changeBackgroundColor = (e) => {
-    const selectedAnimal = e.target.alt;
 
     if (selectedAnimal == "dolphin") {
       document.body.style.backgroundColor = "purple";
@@ -35,8 +31,7 @@ function App() {
         src={Animals[animal].image}
         aria-label={animal}
         role="button"
-        // onClick={displayFact}
-        onClick={changeBackgroundColor}
+        onClick={displayFact}
       />
     );
   }
