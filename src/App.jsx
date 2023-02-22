@@ -10,13 +10,23 @@ function App() {
     document.getElementById("fact").innerHTML = funFact;
   };
 
-  const changeColor = (e) => {
+  const changeOverallBackgroundColor = (e) => {
     const selectedAnimal = e.target.alt;
 
     if (selectedAnimal == "dolphin") {
       document.body.style.backgroundColor = "purple";
     } else {
       document.body.style.backgroundColor = "initial";
+    }
+  };
+
+  const changeImage = (e) => {
+    const selectedAnimal = e.target.alt;
+
+    if (selectedAnimal == "lobster") {
+      document.getElementById("party").style.backgroundColor = "orange";
+    } else {
+      document.getElementById("party").style.backgroundColor = "initial";
     }
   };
 
@@ -33,7 +43,8 @@ function App() {
         aria-label={animal}
         role="button"
         // onClick={displayFact}
-        onClick={changeColor}
+        // onClick={changeOverallBackgroundColor}
+        onClick={changeImage}
       />
     );
   }
@@ -43,7 +54,9 @@ function App() {
       <h1 className="title">{title || "Click on an animal!"}</h1>
       <div className="background">
         <p className="text" id="fact"></p>
-        <div className="animals">{images}</div>
+        <div className="animals" id="party">
+          {images}
+        </div>
       </div>
     </div>
   );
