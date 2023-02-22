@@ -23,6 +23,16 @@ function App() {
     // .innerHTML is adding the html to be funFact, which needs to be randomly generated
   };
 
+  const changeColor = (e) => {
+    const selectedAnimal = e.target.alt;
+
+    if (selectedAnimal == "dolphin") {
+      document.body.style.backgroundColor = "red";
+    } else {
+      document.body.style.backgroundColor = "initial";
+    }
+  };
+
   const title = "";
 
   const images = [];
@@ -36,18 +46,14 @@ function App() {
         src={Animals[animal].image}
         aria-label={animal}
         role="button"
-        onClick={displayFact}
+        // onClick={displayFact}
+        onClick={changeColor}
       />
     );
   }
 
-  // find other examples to take this a step further - change colors when you click or certain images disappear or a certain image grows
-
-  // then go back and refactor to do it in a more simple way
-
   const animalFacts = (
     <div>
-      {/* <h1 className="title">{title === "" ? "Click an animal for a fun fact" : title}</h1> */}
       <h1 className="title">{title || "Click on an animal!"}</h1>
       <div className="background">
         <p className="text" id="fact"></p>
