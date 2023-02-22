@@ -14,7 +14,7 @@ function App() {
     const selectedAnimal = e.target.alt;
 
     if (selectedAnimal == "dolphin") {
-      document.body.style.backgroundColor = "red";
+      document.body.style.backgroundColor = "purple";
     } else {
       document.body.style.backgroundColor = "initial";
     }
