@@ -9,13 +9,21 @@ function App() {
     const funFact = animalInfo.facts[optionIndex];
     document.getElementById("fact").innerHTML = funFact;
 
+    const lobster = document.getElementById("party");
+
     if (selectedAnimal == "dolphin") {
       document.body.style.backgroundColor = "purple";
+      lobster.style.transform = "scale(1)";
+      lobster.style.transition = "transform 0.25s ease";
     } else if (selectedAnimal == "lobster") {
-      document.getElementById("party").style.backgroundColor = "orange";
+      lobster.style.backgroundColor = "orange";
+      lobster.style.transform = "scale(.5)";
+      lobster.style.transition = "transform 0.25s ease";
     } else {
       document.body.style.backgroundColor = "initial";
-      document.getElementById("party").style.backgroundColor = "initial";
+      lobster.style.backgroundColor = "initial";
+      lobster.style.transform = "scale(1)";
+      lobster.style.transition = "transform 0.25s ease";
     }
   };
 
