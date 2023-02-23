@@ -6,8 +6,6 @@
 .background {
   background-image: url("src/assets/1166781.webp");
   height: 500px; 
-  
- 
 }
 
 .animals {
@@ -30,5 +28,4 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
 }

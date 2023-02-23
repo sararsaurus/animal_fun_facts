@@ -2,35 +2,37 @@ import React from "react";
 import { Animals } from "./Animals";
 
 function App() {
+  const party = document.getElementById("party");
+
+  const reset = () => {
+    document.getElementById("title").innerHTML = "Click on an animal!";
+    document.body.style.background = "initial";
+    party.style.background = "initial";
+    party.style.transform = "scale(1)";
+    party.style.transition = "transform 0.25s ease";
+    document.getElementById("fact").innerHTML = "";
+  };
+
   const displayFactAndColor = (e) => {
+    // Get a random fact
     const selectedAnimal = e.target.alt;
     const animalInfo = Animals[selectedAnimal];
     const optionIndex = Math.floor(Math.random() * animalInfo.facts.length);
     const funFact = animalInfo.facts[optionIndex];
     document.getElementById("fact").innerHTML = funFact;
-
-    const images = document.getElementById("party");
-
+    // Bells and whistles
     if (selectedAnimal == "dolphin") {
       document.getElementById("title").innerHTML = "DOLPHIN!!!!";
-      document.body.style.backgroundColor = "purple";
-      images.style.transform = "scale(1)";
-      images.style.transition = "transform 0.25s ease";
-      document.getElementById("ocean").style.visibility = "hidden";
+      document.body.style.backgroundImage = "url('src/assets/ocean1.jpeg')";
+      party.style.transform = "scale(1)";
+      party.style.transition = "transform 0.25s ease";
     } else if (selectedAnimal == "lobster") {
       document.getElementById("title").innerHTML = "LOBSTER!!!!";
-      images.style.backgroundColor = "orange";
-      images.style.transform = "scale(.5)";
-      images.style.transition = "transform 0.25s ease";
-      document.getElementById("ocean").style.visibility = "hidden";
+      party.style.background = "orange";
+      party.style.transform = "scale(.5)";
+      party.style.transition = "transform 0.25s ease";
     } else {
       document.getElementById("title").innerHTML = "STARFISH!!!!";
-      document.body.style.backgroundColor = "initial";
-      images.style.backgroundColor = "initial";
-      images.style.transform = "scale(1)";
-      images.style.transition = "transform 0.25s ease";
-      document.body.style = "#f3f3f3 url('public/octopus.jpeg') no-repeat right bottom";
-      document.getElementById("ocean").style.visibility = "visible";
     }
   };
 
@@ -67,8 +69,10 @@ function App() {
 
   return (
     <div>
-      {animalFacts}
-      <img id="ocean" src="src/assets/ocean1.jpeg" alt="ocean" />
+      {animalFacts}{" "}
+      <button type="button" onClick={reset}>
+        Reset
+      </button>
     </div>
   );
 }
