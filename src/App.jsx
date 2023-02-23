@@ -56,7 +56,7 @@ function App() {
       <h1 className="title" id="title">
         {title || "Click on an animal!"}
       </h1>
-      <div className="background">
+      <div className="background" id="background">
         <p className="text" id="fact"></p>
         <div className="animals" id="party">
           {images}
