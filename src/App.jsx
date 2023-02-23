@@ -9,21 +9,28 @@ function App() {
     const funFact = animalInfo.facts[optionIndex];
     document.getElementById("fact").innerHTML = funFact;
 
-    const lobster = document.getElementById("party");
+    const images = document.getElementById("party");
 
     if (selectedAnimal == "dolphin") {
+      document.getElementById("title").innerHTML = "DOLPHIN!!!!";
       document.body.style.backgroundColor = "purple";
-      lobster.style.transform = "scale(1)";
-      lobster.style.transition = "transform 0.25s ease";
+      images.style.transform = "scale(1)";
+      images.style.transition = "transform 0.25s ease";
+      document.getElementById("ocean").style.visibility = "hidden";
     } else if (selectedAnimal == "lobster") {
-      lobster.style.backgroundColor = "orange";
-      lobster.style.transform = "scale(.5)";
-      lobster.style.transition = "transform 0.25s ease";
+      document.getElementById("title").innerHTML = "LOBSTER!!!!";
+      images.style.backgroundColor = "orange";
+      images.style.transform = "scale(.5)";
+      images.style.transition = "transform 0.25s ease";
+      document.getElementById("ocean").style.visibility = "hidden";
     } else {
+      document.getElementById("title").innerHTML = "STARFISH!!!!";
       document.body.style.backgroundColor = "initial";
-      lobster.style.backgroundColor = "initial";
-      lobster.style.transform = "scale(1)";
-      lobster.style.transition = "transform 0.25s ease";
+      images.style.backgroundColor = "initial";
+      images.style.transform = "scale(1)";
+      images.style.transition = "transform 0.25s ease";
+      document.body.style = "#f3f3f3 url('public/octopus.jpeg') no-repeat right bottom";
+      document.getElementById("ocean").style.visibility = "visible";
     }
   };
 
@@ -46,7 +53,9 @@ function App() {
 
   const animalFacts = (
     <div>
-      <h1 className="title">{title || "Click on an animal!"}</h1>
+      <h1 className="title" id="title">
+        {title || "Click on an animal!"}
+      </h1>
       <div className="background">
         <p className="text" id="fact"></p>
         <div className="animals" id="party">
@@ -56,7 +65,12 @@ function App() {
     </div>
   );
 
-  return <div>{animalFacts}</div>;
+  return (
+    <div>
+      {animalFacts}
+      <img id="ocean" src="src/assets/ocean1.jpeg" alt="ocean" />
+    </div>
+  );
 }
 
 export default App;

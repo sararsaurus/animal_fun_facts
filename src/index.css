@@ -24,3 +24,11 @@ background-color:indianred;
 text-align: center;
 font-size: larger;
 }
+
+img {
+  padding-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
